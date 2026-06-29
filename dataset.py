@@ -23,6 +23,13 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    "fire",
+    "lit",
+    "ecstatic",
+    "proud",
+    "winning",
+    "hopeful",
+    "rocks",
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +43,11 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    "cooked",
+    "traffic",
+    "exhausted",
+    "mid",
+    "wrong",
 ]
 
 # ---------------------------------------------------------------------
@@ -50,6 +62,20 @@ SAMPLE_POSTS = [
     "This is fine",
     "So excited for the weekend",
     "I am not happy about this",
+    "Lowkey stressed but kind of proud of myself",
+    "This rocks",
+    "I am feeling ecstatic",
+    "This is absolutely terrible",
+    "This is cooked",
+    "I am winning this day",
+    "That concert was fire",
+    "I'm exhausted but proud of myself",
+    "I absolutely love getting stuck in traffic",
+    "Not bad at all",
+    "Everything keeps going wrong today",
+    "I'm fine",
+    "This movie was mid",
+    "No cap this food is amazing",
 ]
 
 # Human labels for each post above.
@@ -65,6 +91,20 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    "mixed",     # "Lowkey stressed but kind of proud of myself"
+    "positive",  # "This rocks"
+    "positive",  # "I am feeling ecstatic"
+    "negative",  # "This is absolutely terrible"
+    "negative",  # "This is cooked"
+    "positive",  # "I am winning this day"
+    "positive",  # "That concert was fire"
+    "mixed",     # "I'm exhausted but proud of myself"
+    "negative", # "I absolutely love getting stuck in traffic"
+    "positive",  # "Not bad at all"
+    "negative",  # "Everything keeps going wrong today"
+    "neutral",   # "I'm fine"
+    "negative",  # "This movie was mid"
+    "positive",  # "No cap this food is amazing"
 ]
 
 # TODO: Add 5-10 more posts and labels.

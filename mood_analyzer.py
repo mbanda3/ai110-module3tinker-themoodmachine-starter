@@ -13,6 +13,7 @@ from typing import List, Dict, Tuple, Optional
 
 from dataset import POSITIVE_WORDS, NEGATIVE_WORDS
 
+import re
 
 class MoodAnalyzer:
     """
@@ -52,10 +53,14 @@ class MoodAnalyzer:
           - Handle simple emojis separately (":)", ":-(", "🥲", "😂")
           - Normalize repeated characters ("soooo" -> "soo")
         """
-        cleaned = text.strip().lower()
-        tokens = cleaned.split()
+        text = text.lower()
+        text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
+        
+        return text.split()
+        # cleaned = text.strip().lower()
+        # tokens = cleaned.split()
 
-        return tokens
+        # return tokens
 
     # ---------------------------------------------------------------------
     # Scoring logic
@@ -83,7 +88,26 @@ class MoodAnalyzer:
         #
         # Hint: if you implement negation, you may want to look at pairs of tokens,
         # like ("not", "happy") or ("never", "fun").
-        pass
+        tokens = self.preprocess(text)
+
+        score = 0
+        negate = False
+
+        for token in tokens:
+            if token in ["not", "never", "no"]:
+                negate = True
+                continue
+
+            if token in self.positive_words:
+                score += -1 if negate else 1
+                negate = False
+            elif token in self.negative_words:
+                score += 1 if negate else -1
+                negate = False
+            else:
+                negate = False
+        
+        return score
 
     # ---------------------------------------------------------------------
     # Label prediction
@@ -110,7 +134,15 @@ class MoodAnalyzer:
         #   2. Return "positive" if the score is above 0.
         #   3. Return "negative" if the score is below 0.
         #   4. Return "neutral" otherwise.
-        pass
+        score = self.score_text(text)
+
+        if score > 0:
+            return "positive"
+        elif score < 0:
+            return "negative"
+        else:
+            return "neutral"
+
 
     # ---------------------------------------------------------------------
     # Explanations (optional but recommended)
