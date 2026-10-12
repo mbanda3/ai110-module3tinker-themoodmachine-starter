@@ -21,6 +21,9 @@ Example: classify short text messages as moods like positive, negative, neutral,
 For the rule based version, describe the scoring rules you created.  
 For the ML version, describe how training works at a high level (no math needed).
 
+I used both the rule-based model and the ML model.  For the rule-based model I modified mood_analyzer.py and added new posts to dataset.py.  I ran python main.py and evaluated the predictions and then improved the logic.  
+
+I used the ML model by running python ml_experiments.py and trained the LogisticRegression model based on my dataset, then compared its predictions and accuracy with the rule-based model.  
 
 
 ## 2. Data

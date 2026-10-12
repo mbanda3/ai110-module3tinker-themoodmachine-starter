@@ -76,6 +76,14 @@ SAMPLE_POSTS = [
     "I'm fine",
     "This movie was mid",
     "No cap this food is amazing",
+    "Highkey can't wait for tomorrow 😂",
+    "Failed my exam and now my laptop died too 💀",
+    "Got the job!! but I have to move across the country 🥲",
+    "Oh great, another Monday meeting :)",
+    "Just got home, making dinner",
+    "Lowkey obsessed with this new playlist",
+    "I miss my friends so much :(",
+    "Cried at the finale but it was beautiful 😭",
 ]
 
 # Human labels for each post above.
@@ -105,6 +113,14 @@ TRUE_LABELS = [
     "neutral",   # "I'm fine"
     "negative",  # "This movie was mid"
     "positive",  # "No cap this food is amazing"
+    "positive",  # "Highkey can't wait for tomorrow 😂"
+    "negative",  # "Failed my exam and now my laptop died too 💀"
+    "mixed",     # "Got the job!! but I have to move across the country 🥲"
+    "negative",  # "Oh great, another Monday meeting :)" (sarcasm)
+    "neutral",   # "Just got home, making dinner"
+    "positive",  # "Lowkey obsessed with this new playlist"
+    "negative",  # "I miss my friends so much :("
+    "mixed",     # "Cried at the finale but it was beautiful 😭"
 ]
 
 # TODO: Add 5-10 more posts and labels.
